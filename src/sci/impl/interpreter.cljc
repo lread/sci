@@ -584,7 +584,7 @@
     (vary-meta v (fn [m]
                    (-> m
                        (dissoc :sci.impl/op)
-                       (assoc :line (:line old-meta)))))
+                       (merge (select-keys old-meta [:line])))))
     v))
 
 (defn interpret
